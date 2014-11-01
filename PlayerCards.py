@@ -1,9 +1,14 @@
 from random import shuffle
+from Card import Card
+from Tile import Tile
 
-class Cards():
+class PlayerCards():
 	deck = []
 	hand = []
 	discard = []
+	board = [[None] * 5 for x in range(5)]
+		
+		
 	def __init__(s,cardType):
 		s.cardType=cardType
 	
@@ -55,11 +60,13 @@ class Cards():
 		print("Hand:  "+str(s.hand))
 		print("Deck:  "+str(s.deck))
 		print("Discard:  "+str(s.discard))
+		for i in range(5):
+			print(str(s.board[i]))
 		print()
 
 
 def Test():
-	p1 = Cards(int)
+	p1 = PlayerCards(int)
 	p1.deck = [i for i in range (10)]
 	p1.discard = [i for i in range (10,20)]
 	p1.pp()
@@ -69,6 +76,10 @@ def Test():
 
 	print(p1.discardCard([0],p1.hand))
 	p1.pp()
+	
+	p1.board[2][1]=Tile("Stone")
+	p1.pp()
+
 
 Test()
 
