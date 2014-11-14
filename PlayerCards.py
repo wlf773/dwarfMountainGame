@@ -2,7 +2,7 @@ from random import shuffle
 from Card import Card
 from Tile import Tile
 
-class PlayerCards():
+class PlayerCards:
 	deck = []
 	hand = []
 	discard = []
@@ -77,7 +77,7 @@ def Test():
 	print(p1.discardCard([0],p1.hand))
 	p1.pp()
 	
-	p1.board[2][1]=Tile("Stone")
+	p1.board[2][1]=Tile("stone")
 	p1.pp()
 
 

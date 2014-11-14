@@ -10,7 +10,9 @@ class Card:
 		
 		
 		
-		
-card = Card("Prospector","Mining Guild","Text goes here")
-print(card)
+def Test():		
+	card = Card("Prospector","Mining Guild","Text goes here")
+	print(card)
 
+
+Test()

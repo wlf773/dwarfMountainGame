@@ -1,15 +1,32 @@
+from enum import Enum
 
 
-
-class Tile:
+class TileType(Enum):
+	stone=1
+	wood=2
+	treasure=3
+	monster=4
+	ironOre=10
+	dross=11
+	iron=12
+	silverOre=20
+	pewter=21
+	silver=22
+	goldOre=30
+	lead=31
+	gold=32
 	
-	def __init__(s,name):
-		s.name=str(name)
-		
 	def __repr__(s):
 		return s.name
+		
+class Tile:
+	def __init__(s,v):
+		if isinstance(v,int):
+			s.type = TileType(v)
+		else:
+			s.type = TileType[v]
 	
-		
-		
-thisTile=Tile("wood")
-print(thisTile)
+	def __repr__(s):
+		return repr(s.type)
+
+
